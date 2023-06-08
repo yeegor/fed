@@ -2,6 +2,7 @@ module.exports = {
   root: true,
   parser: '@typescript-eslint/parser',
   plugins: ['@typescript-eslint', 'node', 'prettier'],
+  ignorePatterns: ["./src/templates/**/*"],
   parserOptions: {
     tsconfigRootDir: __dirname,
     project: ['./tsconfig.json'],

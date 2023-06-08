@@ -9,5 +9,12 @@
     "declaration": true,
     "forceConsistentCasingInFileNames": true
   },
-  "include": ["src/**/*.ts"]
+  "exclude": [
+    "node_modules",
+    "lib",
+    "src/templates"
+  ],
+  "include": [
+    "src/**/*.ts"
+  ]
 }

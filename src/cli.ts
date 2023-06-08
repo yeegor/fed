@@ -1,14 +1,26 @@
+#!/usr/bin/env node
 import { Command } from 'commander';
 
+import { create } from './actions/create/create';
+import { CreateOptions } from './actions/create/types';
+
 const packageJson = require('../package.json');
-const version: string = packageJson.version;
 
 const program = new Command();
 
 program
-  .version(version)
-  .name('my-command')
-  .option('-d, --debug', 'enables verbose logging', false)
-  .parse(process.argv);
+  .name('fed')
+  .description('Front End Developer CLI')
+  .version(packageJson.version);
 
-// Function code for CLI goes here
+program
+  .command('create')
+  .alias('crc')
+  .description('Create a React component')
+  .argument('<name>', 'Name of the component')
+  .option('-c, --container', 'Create a container component')
+  .action((name: string, flags: CreateOptions, program: Command) => {
+    create(name, flags, program);
+  });
+
+program.parse();

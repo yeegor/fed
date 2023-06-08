@@ -1,0 +1,15 @@
+import { FC } from 'react';
+
+const %Example%: FC<%Example%Props> = ({
+  ...props
+}) => {
+  // TODO implement %Example%
+
+  return (
+    <div>
+      %Example%
+    </div>
+  )
+};
+
+export default %Example%;

@@ -1,7 +1,7 @@
 {
   "name": "typescript-npm-cli-template",
   "version": "0.0.0-development",
-  "description": "A template for creating npm CLI tools using TypeScript and VSCode",
+  "description": "A frontend CLI tool",
   "files": [
     "!lib/__tests__/**/*",
     "lib/**/*",
@@ -24,35 +24,29 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ryansonshine/typescript-npm-cli-template.git"
+    "url": "git+https://github.com/yeegor/fed.git"
   },
   "license": "MIT",
   "author": {
-    "name": "Ryan Sonshine",
-    "email": "ryansonshine@users.noreply.github.com",
-    "url": "https://github.com/ryansonshine"
+    "name": "Jegors Batovs",
+    "email": "yeegor@users.noreply.github.com",
+    "url": "https://github.com/yeegor"
   },
   "engines": {
     "node": ">=12.0"
   },
   "keywords": [
-    "boilerplate",
     "cli",
-    "template",
-    "typescript",
-    "vscode",
-    "jest",
-    "husky",
-    "commitizen",
-    "semantic-release",
-    "codecov"
+    "frontend",
+    "react"
   ],
   "bugs": {
     "url": "https://github.com/ryansonshine/typescript-npm-cli-template/issues"
   },
   "homepage": "https://github.com/ryansonshine/typescript-npm-cli-template#readme",
   "dependencies": {
-    "commander": "^7.2.0"
+    "@types/commander": "^2.12.2",
+    "commander": "^10.0.1"
   },
   "devDependencies": {
     "@ryansonshine/commitizen": "^4.2.8",

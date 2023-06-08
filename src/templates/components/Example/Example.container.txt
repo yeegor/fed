@@ -1,0 +1,20 @@
+import { FC, createContext } from 'react';
+
+import %Example% from './%Example%.component';
+import { %Example%ContextType } from './types';
+
+const %Example%Context = createContext({} as %Example%ContextType);
+
+const %Example%Container: FC<%Example%Props> = ({ ...props }) => {
+  // TODO implement %Example%Container
+
+  return (
+    <%Example%Context.Provider value={ {
+      // TODO expose
+    } }>
+      <%Example% { ...props } />
+    </%Example%Context.Provider>
+  )
+};
+
+export default %Example%Container
