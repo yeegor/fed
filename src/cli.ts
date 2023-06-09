@@ -1,12 +1,13 @@
 #!/usr/bin/env node
 import { Command } from 'commander';
 
-import { create } from './actions/create/create';
-import { CreateOptions } from './actions/create/types';
+import { createReactComponent } from './actions/react-component/create';
+import { CreateOptions } from './actions/react-component/command-types';
+import { createRematchModel } from './actions/rematch-model/create';
 
 const packageJson = require('../package.json');
 
-const program = new Command();
+export const program = new Command();
 
 program
   .name('fed')
@@ -14,13 +15,22 @@ program
   .version(packageJson.version);
 
 program
-  .command('create')
-  .alias('crc')
+  .command('react-component')
+  .alias('component')
   .description('Create a React component')
   .argument('<name>', 'Name of the component')
   .option('-c, --container', 'Create a container component')
-  .action((name: string, flags: CreateOptions, program: Command) => {
-    create(name, flags, program);
+  .action((name: string, flags: CreateOptions) => {
+    createReactComponent(name, flags);
+  });
+
+program
+  .command('rematch-model')
+  .alias('model')
+  .description('Create a Rematch model')
+  .argument('<name>', 'Name of the model')
+  .action((name: string) => {
+    createRematchModel(name);
   });
 
 program.parse();

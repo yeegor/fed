@@ -1,7 +1,7 @@
 import { FC, createContext } from 'react';
 
 import %Example% from './%Example%.component';
-import { %Example%ContextType } from './types';
+import { %Example%ContextType, %Example%Props } from './types';
 
 const %Example%Context = createContext({} as %Example%ContextType);
 

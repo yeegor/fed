@@ -1,0 +1,29 @@
+import { createModel } from "@rematch/core";
+import { Dispatch, RootModel, RootState } from "%IMPORT_PATH_OF_REMATCH_ROOT%";
+import { %Example%State } from "./types";
+
+const %example%Model = {
+  name: '%example%',
+  state: {
+    something: false
+  } as %Example%State,
+  reducers: {
+    SET_SOMETHING(state: %Example%State, something: boolean) {
+      return { ...state, something };
+    },
+  },
+  effects: (dispatch: Dispatch) => ({
+    async toggleSomething(value: boolean | undefined, state: RootState) {
+      if (value) {
+        dispatch.example.SET_SOMETHING(await Promise.resolve(value));
+
+        return;
+      }
+
+      const currentSomething = state.%example%.something;
+      dispatch.example.SET_SOMETHING(!currentSomething);
+    },
+  }),
+};
+
+export const %example% = createModel<RootModel>()(%example%Model);
